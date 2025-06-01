@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 최신 JS 문법으로 컴파일
+    "module": "ESNext", // ES 모듈로 컴파일
+    "jsx": "react-native", // JSX 문법을 React Native 스타일로 처리
+    "declaration": true, // 타입 선언 파일 (.d.ts) 생성
+    "outDir": "lib", // 컴파일된 결과물을 lib 폴더에 저장
+    "strict": true, // 타입 검사 엄격하게
+    "moduleResolution": "node", // node_modules 방식으로 모듈 찾기
+    "esModuleInterop": true, // commonjs <-> esmodule 호환
+    "skipLibCheck": true, // 외부 라이브러리 타입 검사 생략
+    "forceConsistentCasingInFileNames": true // 대소문자 일관성 검사
+  },
+  "include": ["src"], // 컴파일 대상 폴더
+  "exclude": ["node_modules", "lib"] // 제외할 폴더
+}
