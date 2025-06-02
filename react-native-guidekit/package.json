@@ -1,0 +1,32 @@
+{
+  "name": "react-native-guidekit",
+  "version": "1.0.0",
+  "description": "A guide kit for React Native development.",
+  "main": "index.js",
+  "scripts": {
+    "release": "changeset publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/react-native-guidekit.git"
+  },
+  "keywords": [
+    "react-native",
+    "guide",
+    "development"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.2"
+  },
+  "devDependencies": {
+    "changesets": "^2.0.0"
+  },
+  "homepage": "https://github.com/yourusername/react-native-guidekit#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/react-native-guidekit/issues"
+  }
+}
