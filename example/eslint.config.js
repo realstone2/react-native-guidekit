@@ -6,5 +6,8 @@ module.exports = defineConfig([
   expoConfig,
   {
     ignores: ["dist/*"],
+    settings: {
+      "import/core-modules": ["react-native-guidekit"],
+    },
   },
 ]);
