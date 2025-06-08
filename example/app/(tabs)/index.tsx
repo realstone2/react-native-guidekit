@@ -1,11 +1,12 @@
 import { Image } from "expo-image";
-import { Platform, StyleSheet } from "react-native";
+import { Button, Platform, StyleSheet, Text, View } from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import * as GuideKit from "react-native-guidekit";
+import React, { useEffect } from "react";
 export default function HomeScreen() {
   return (
     <GuideKit.GuideKitProvider>
@@ -18,10 +19,26 @@ export default function HomeScreen() {
           />
         }
       >
-        <ThemedView style={styles.titleContainer}>
-          <ThemedText type="title">Welcome!</ThemedText>
-          <HelloWave />
-        </ThemedView>
+        <TestGuideButton />
+        <GuideKit.GuideMaskSection
+          type="mask"
+          onPress={() => {
+            console.log("TEST GUIDE ON PRESS");
+          }}
+          guideKey="TEST_GUIDE"
+          maskPadding={16}
+          tooltip={{
+            arrowPosition: "topLeft",
+            position: "topLeft",
+            title: <Text>안녕하세요</Text>,
+            content: <Text>이곳은 테스트용 가이드입니다.</Text>,
+          }}
+        >
+          <ThemedView style={styles.titleContainer}>
+            <ThemedText type="title">Welcome!</ThemedText>
+            <HelloWave />
+          </ThemedView>
+        </GuideKit.GuideMaskSection>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="subtitle">Step 1: Try it</ThemedText>
           <ThemedText>
@@ -61,6 +78,21 @@ export default function HomeScreen() {
     </GuideKit.GuideKitProvider>
   );
 }
+
+/**
+ *TestGuideButton
+ **/
+const TestGuideButton = React.memo(function TestGuideButton() {
+  const { startGuide } = GuideKit.useGuideKitState();
+
+  const startTestGuide = () => {
+    startGuide({
+      guideKeyList: ["TEST_GUIDE"],
+    });
+  };
+
+  return <Button title="START TEST GUIDE" onPress={startTestGuide}></Button>;
+});
 
 const styles = StyleSheet.create({
   titleContainer: {

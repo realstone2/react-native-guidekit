@@ -2,6 +2,7 @@ import React from "react";
 
 import { GuideKetContext } from "../hooks/useGuideKitContext";
 import { GuideKitContextType, GuideKitCustomTypes, GuideType } from "../types";
+import { GuideKitDimComponent } from "./GuideKitDimComponent";
 
 /**
  * GuideKitProvider
@@ -97,6 +98,7 @@ export function GuideKitProvider({ children }: { children: React.ReactNode }) {
   return (
     <GuideKetContext.Provider value={defaultContextValue}>
       {children}
+      <GuideKitDimComponent />
     </GuideKetContext.Provider>
   );
 }

@@ -30,9 +30,9 @@ export type GuideKitContextType<T extends GuideKitCustomTypes["guideKeyType"]> =
   {
     currentGuideInfo: GuideType | null;
     currentGuideKey: T | null;
-    setGuideInfoMap: (
-      value: Map<GuideKitCustomTypes["guideKeyType"], GuideType>
-    ) => void;
+    setGuideInfoMap: React.Dispatch<
+      React.SetStateAction<Map<string, MaskGuideType>>
+    >;
     startGuide: (args: {
       guideKeyList: T[];
       onComplete?: () => void;

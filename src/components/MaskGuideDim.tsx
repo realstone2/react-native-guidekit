@@ -210,7 +210,7 @@ const TooltipSection = React.memo(function TooltipSection({
  * Tooltip
  **/
 const Tooltip = React.memo(function Tooltip(props: MaskGuideType["tooltip"]) {
-  const { currentGuideInfo, goNextStep } = useGuideKitContext();
+  const { goNextStep } = useGuideKitContext();
 
   const getTooltipArrowPosition = () => {
     if (props?.arrowPosition === "topLeft") {
@@ -258,29 +258,35 @@ const Tooltip = React.memo(function Tooltip(props: MaskGuideType["tooltip"]) {
   };
 
   return (
-    <View>
-      <View style={{ borderRadius: 16, width: TOOLTIP_WIDTH, padding: 20 }}>
-        <Text>{props?.title}</Text>
-        <View style={{ minHeight: 57 }}>
-          <Text>{props?.content}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
+    <View
+      style={{
+        borderRadius: 16,
+        width: TOOLTIP_WIDTH,
+        padding: 20,
+        backgroundColor: "white",
+      }}
+    >
+      <Text>{props?.title}</Text>
+      <View style={{ minHeight: 57 }}>
+        <Text>{props?.content}</Text>
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Chip
+          onPress={() => {
+            props?.onPressButton?.();
+            goNextStep();
           }}
         >
-          <Chip
-            onPress={() => {
-              props?.onPressButton?.();
-              goNextStep();
-            }}
-          >
-            <></>
-          </Chip>
-        </View>
+          <Text>{props?.buttonText ?? "다음"}</Text>
+        </Chip>
       </View>
+
       <View
         style={{
           position: "absolute",
