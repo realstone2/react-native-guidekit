@@ -1,5 +1,12 @@
 # react-native-guidekit
 
+## 1.1.1
+
+### Patch Changes
+
+- 24b9d48: feat: example 폴더에서 상위 패키지 import 연결 작업
+- 8c5b69b: feat: add Guide Kit default hook, component
+
 ## 1.1.0
 
 ### Minor Changes
