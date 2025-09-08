@@ -174,4 +174,4 @@ ISC License
 
 ---
 
-Made with ❤️ by [Jindol](mailto:wlstjrghdud@naver.com)
+Made with ❤️ by [Jindol](mailto:yeojinseok@kakao.com)
